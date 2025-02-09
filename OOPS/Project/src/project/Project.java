@@ -9,8 +9,8 @@ abstract class emp
 	 int id;
 	    int age;
 	    String name;
-	    String designation="Trainee";
-	    int salary=20000 ;
+	    String designation;
+	    int salary ;
 	    emp()
 	    {
 	    Scanner s1 = new Scanner(System.in);
@@ -29,7 +29,10 @@ abstract class emp
 	   abstract void raisesalary() ;
 }
 class Developer extends emp implements I{
+	String designation="Developer";
+    int salary=50000;
     Developer() {
+
     }
  
     void display() {
@@ -42,7 +45,7 @@ class Developer extends emp implements I{
     }
  
     void raisesalary() {
-        salary = salary + 40000;
+        salary = salary + 20000;
         System.out.println("Salary raised! New salary: " + salary);
     }
 
@@ -54,12 +57,14 @@ class Developer extends emp implements I{
 }
  
 class Tester extends emp implements I{
- 
+	String designation="Tester";
+	int salary=30000;
+
  
     Tester() {
     }
  
-    void show() {
+    void display() {
     	System.out.println("*************************");
         System.out.println("My Name is: " + name);
         System.out.println("My ID: " + id);
@@ -81,12 +86,14 @@ class Tester extends emp implements I{
 }
  
 class Clerk extends emp implements I{
- 
+	String designation="Clerk";
+	int salary=20000;
+
  
     Clerk() {
     }
  
-    void showcase() {
+    void display() {
     	System.out.println("*************************");
         System.out.println("My Name is: " + name);
         System.out.println("My ID: " + id);
@@ -96,7 +103,7 @@ class Clerk extends emp implements I{
     }
  
     void raisesalary() {
-        salary = salary + 10000;
+        salary = salary + 20000;
         System.out.println("Salary raised! New salary: " + salary);
     }
 
@@ -119,19 +126,15 @@ public class Project {
  
         do {
         	System.out.println("================================");
-            System.out.println("1) Display");
-            System.out.println("2) Create");
+            System.out.println("1) Create");
+            System.out.println("2) Display");
             System.out.println("3) Raise Salary");
             System.out.println("4) Commute ");
             System.out.println("5) Exit");
             System.out.print("Enter your choice: ");
             ch1 = sc.nextInt();
  
-            if (ch1 == 1) {
-                if (d != null) d.display();
-                if (t != null) t.show();
-                if (c != null) c.showcase();
-            } else if (ch1 == 2) {
+             if (ch1 == 1) {
                 do {
                  	System.out.println("================================");
                     System.out.println("1) Developer");
@@ -149,35 +152,59 @@ public class Project {
                         c = new Clerk();  
                     }
  
-                } while (ch2 != 4);  
-            } else if (ch1 == 3) {
+                } while (ch2 != 4);               
+             
+            } 
+            else if (ch1 == 2) {
+                
+                if (d!=null) {d.display();}
+                if (t!=null) { t.display();}
+                if (c!=null) { c.display();}
+            
+            }
+            else if (ch1 == 3) {
                 // Raise salary
-                if (d != null) {
+            	do {
+            	System.out.println("================================");
+                System.out.println("1) Developer");
+                System.out.println("2) Tester");
+                System.out.println("3) Clerk");
+                System.out.println("4) Back");
+                System.out.print("Enter your choice: ");
+                ch2 = sc.nextInt();
+
+                if (ch2==1) {
                     System.out.println("Raising salary for Developer...");
                     d.raisesalary();
-                } else if (t != null) {
+                } if(ch2==2) {
                     System.out.println("Raising salary for Tester...");
                     t.raisesalary();
-                } else if (c != null) {
+                }  if (ch2==3) {
                     System.out.println("Raising salary for Clerk...");
                     c.raisesalary();
-                } else {
-                    System.out.println("No employee has been created yet.");
                 }
+            	}while(ch2!=4);
             } else if (ch1 == 4) {
-                // Raise salary
-                if (d != null) {
+                // Commute    
+            	do {
+            		System.out.println("================================");
+                    System.out.println("1) Developer");
+                    System.out.println("2) Tester");
+                    System.out.println("3) Clerk");
+                    System.out.println("4) Back");
+                    System.out.print("Enter your choice: ");
+                    ch2 = sc.nextInt();
+            	if (ch2==1) {
                     System.out.print("Commute By :");
                     d.cab();
-                } else if (t != null) {
+                } else if (ch2==2) {
                     System.out.print("Commute By :");
                     t.cab();
-                } else if (c != null) {
+                } else if (ch2==3) {
                     System.out.print("Commute By :");
                     c.cab();
-                } else {
-                    System.out.println("No employee has been created yet.");
-                }
+                } 
+            	}while(ch2!=4);
             }
             else if (ch1 == 5) {
                 // Exit the program
@@ -188,4 +215,5 @@ public class Project {
             }
         } while (ch1 != 5);      }
 }
+ 
  
