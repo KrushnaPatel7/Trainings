@@ -1,0 +1,28 @@
+First Normal Form :No dup + in single column no multiple entires for specific row
+
+EMPId    EMPName    Mob
+1        Krushna    9876543210
+
+Second Normal From
+	1.It has to pass FNF
+	2.
+	
+EMPId   EMPName
+1       Kruhsna 
+
+MobileId   MobileNumber   EmpId(FK)
+1          9876543210       1
+2          1234567890       1
+
+Third Normal Form
+	1.It has to pass 2NF
+	2.No Transitive Functional Dependency
+
+EMPId  EMPName    DepartId     CourseId
+
+
+DepartId     DepName
+
+
+CourseId    CourseName
+

@@ -1,0 +1,30 @@
+Email ID : krushna.patel@igtsolutions.com
+Name: Krushna Patel
+empId: 20159503
+
+Answers
+1)B)Enscapsulation
+2)C)Abstraction
+3)C)Inheritance
+4)D)Polymorphism
+5)B) A constructor in java can have written type
+6)A)Aggregation
+7)B)NumberFormatException caught --> Finally block excecuted
+8)A) Inside try block->inside catch block->inside finally block
+9)C) Java
+10)D) Both A and C
+11)A)true false
+12)B) ABC
+13)A) Use Synchronized keyword on the balance update method
+14)B) HashSet<String>
+15)A)ArrayList<Employee>
+16)A)LinkedHashMap
+17)B)TreeSet
+18)B)[A,B,C]
+19)A)[10,20,40]
+20)B) {X=4,Y=2,Z=3}
+21)B)3 3 3
+22)B)33
+23)A)final
+24)B) throw
+25)B)StringBuilder
